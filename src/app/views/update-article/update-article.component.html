@@ -1,0 +1,17 @@
+<section class="container">
+    <form>
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">Título</label>
+            <input type="text" class="form-control" id="inputTitle" name="inputTitle" [(ngModel)]="inputTitle" placeholder="Ingrese el titulo">
+        </div>
+        <div class="mb-3">
+            <label for="inputSubtitle" class="form-label">Subtítulo</label>
+            <input type="text" class="form-control" id="inputSubtitle" name="inputSubtitle" [(ngModel)]="inputSubtitle" placeholder="Ingrese el titulo">
+        </div>
+        <div class="mb-3">
+            <label for="inputArticle" class="form-label">Árticulo</label>
+            <textarea class="form-control" id="inputArticle" name="inputArticle" [(ngModel)]="inputArticle" rows="7"></textarea>
+        </div>
+        <button type="button" class="btn btn-outline-primary" (click)="updateArticle()">Actulizar</button>
+    </form>
+</section>

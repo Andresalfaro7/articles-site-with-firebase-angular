@@ -1,0 +1,30 @@
+<section class="container">
+    <form class="py-4">
+        <h4 class="text-center">Registro de Árticulos</h4>
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">Título</label>
+            <input type="text" class="form-control" id="inputTitle" name="inputTitle" [(ngModel)]="inputTitle" placeholder="Ingrese el titulo">
+        </div>
+        <div class="mb-3">
+            <label for="inputSubtitle" class="form-label">Subtítulo</label>
+            <input type="text" class="form-control" id="inputSubtitle" name="inputSubtitle" [(ngModel)]="inputSubtitle" placeholder="Ingrese el titulo">
+        </div>
+        <div class="mb-3">
+            <label for="inputArticle" class="form-label">Árticulo</label>
+            <textarea class="form-control" id="inputArticle" name="inputArticle" [(ngModel)]="inputArticle" rows="7"></textarea>
+        </div>
+        <button type="button" class="btn btn-outline-primary" (click)="saveArticle()">Guardar</button>
+    </form>
+</section>
+<section class="container py-4">
+    <h4 class="text-center">Árticulos</h4>
+    <div class="card my-4" *ngFor="let article of articles; let i">
+        <div class="card-body">
+            <h5 class="card-title">{{article.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{article.subtitle}}</h6>
+            <p class="card-text">{{article.article}}</p>
+            <a [routerLink]="['actualizar-articulo', article.id]" class="pe-4" role="button">Editar</a>
+            <a class="card-link text-danger" (click)="deleteArticle(article.id)" role="button">Eliminar</a>
+        </div>  
+    </div>
+</section>
